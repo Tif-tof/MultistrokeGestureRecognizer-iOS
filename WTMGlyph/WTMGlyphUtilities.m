@@ -8,7 +8,7 @@
 
 #import "WTMGlyphUtilities.h"
 
-NSArray* Resample(NSArray *points, int num) {
+NSArray* Resample(NSArray *points, NSUInteger num) {
     NSMutableArray *workingPoints = [NSMutableArray arrayWithArray:points];
     NSMutableArray *newPoints = [NSMutableArray arrayWithObject:[points objectAtIndex:0]];
     float I = PathLength(points) / (num -1);
@@ -54,7 +54,7 @@ NSArray* Resample(NSArray *points, int num) {
     return newPoints;
 }
 
-NSArray* Scale(NSArray *points, int resolution, float threshold) {
+NSArray* Scale(NSArray *points, NSUInteger resolution, float threshold) {
     NSMutableArray *scaled = [NSMutableArray array];
     
     CGRect bb = BoundingBox(points);
@@ -107,9 +107,9 @@ CGRect BoundingBox(NSArray *points) {
     return CGRectMake(minX, minY, (maxX-minX), (maxY-minY));
 }
 
-NSMutableArray* Splice(NSMutableArray *original, id newVal, int i) {
+NSMutableArray* Splice(NSMutableArray *original, id newVal, NSUInteger i) {
     NSArray *frontSlice = [original subarrayWithRange:NSMakeRange(0, i)];
-    int len = original.count-i;
+    NSUInteger len = original.count - i;
     NSArray *backSlice = [original subarrayWithRange:NSMakeRange(i, len)];
     
     NSMutableArray *spliced = [NSMutableArray arrayWithArray:frontSlice];
@@ -189,7 +189,7 @@ NSArray* TranslateToOrigin(NSArray *points) {
     return translated;
 }
 
-CGPoint CalcStartUnitVector(NSArray *points, int count) {
+CGPoint CalcStartUnitVector(NSArray *points, NSUInteger count) {
     CGPoint pointAtIndex = [[points objectAtIndex:count] CGPointValue];
     CGPoint firstPoint = [[points objectAtIndex:0] CGPointValue];
                           
@@ -233,7 +233,7 @@ float OptimalCosineDistance(FloatArrayContainer v1, FloatArrayContainer v2) {
     float angle;
     float score;
     
-    int mincount = (v1.itemCount < v2.itemCount ? v1.itemCount : v2.itemCount);
+    NSUInteger mincount = (v1.itemCount < v2.itemCount ? v1.itemCount : v2.itemCount);
     
     for (int ii = 0; ii < mincount; ii+=2) {
         a += v1.items[ii] * v2.items[ii] + v1.items[ii+1] * v2.items[ii+1];

@@ -66,7 +66,7 @@
         [self.templates addObject:newTemplate];
     }
     DebugLog(@"Templates %@", self.templates);
-    DebugLog(@"Template count %i", [self.templates count]);
+    DebugLog(@"Template count %lu", (unsigned long)[self.templates count]);
 }
 
 - (void)createTemplatesFromJSONData:(NSData *)jsonData {
@@ -90,7 +90,7 @@
     [self createTemplates];
 }
 
-- (void)permuteStrokeOrders:(int)count {
+- (void)permuteStrokeOrders:(NSUInteger)count {
     if (count == 1) {
         [permutedStrokeOrders addObject: [strokeOrders copy]];
     } else {

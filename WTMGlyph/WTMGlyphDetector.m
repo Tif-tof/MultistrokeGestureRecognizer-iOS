@@ -209,7 +209,7 @@
     NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
     NSInteger elapsed = now - lastPointTime;
     
-    DebugLog(@"Elapsed time since last point is: %i", elapsed);
+    DebugLog(@"Elapsed time since last point is: %li", (long)elapsed);
     if (elapsed >= self.timeoutSeconds) {
         DebugLog(@"Timeout detected");
         return YES;

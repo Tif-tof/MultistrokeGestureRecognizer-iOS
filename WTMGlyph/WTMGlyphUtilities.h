@@ -12,18 +12,18 @@
 
 typedef struct FloatArrayContainer {
     float * items;
-    int itemCount;
-    int allocatedCount;
+    NSUInteger itemCount;
+    NSUInteger allocatedCount;
 } FloatArrayContainer;
 
-NSArray* Resample(NSArray *points, int num);
-NSArray* Scale(NSArray *points, int resolution, float threshold);
+NSArray* Resample(NSArray *points, NSUInteger num);
+NSArray* Scale(NSArray *points, NSUInteger resolution, float threshold);
 CGRect BoundingBox(NSArray *points);
-NSMutableArray* Splice(NSMutableArray *original, id newVal, int i);
+NSMutableArray* Splice(NSMutableArray *original, id newVal, NSUInteger i);
 float PathLength(NSArray *points);
 float Distance(CGPoint point1, CGPoint point2);
 float IndicativeAngle(NSArray *points);
 NSArray* TranslateToOrigin(NSArray *points);
-CGPoint CalcStartUnitVector(NSArray *points, int count);
+CGPoint CalcStartUnitVector(NSArray *points, NSUInteger count);
 FloatArrayContainer Vectorize(NSArray *points);
 float OptimalCosineDistance(FloatArrayContainer v1, FloatArrayContainer v2);
