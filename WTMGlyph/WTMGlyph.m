@@ -10,7 +10,6 @@
 #import "WTMGlyphStroke.h"
 #import "WTMGlyphTemplate.h"
 #import "WTMGlyphUtilities.h"
-#import "CJSONDeserializer.h"
 
 @implementation WTMGlyph
 
@@ -72,8 +71,8 @@
 
 - (void)createTemplatesFromJSONData:(NSData *)jsonData {
     NSError *error = nil;
-	NSArray *arr = [[CJSONDeserializer deserializer] deserializeAsArray:jsonData error:&error];
-	DebugLog(@"json data %@", arr);
+    NSArray *arr = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+    DebugLog(@"json data %@", arr);
     int i = 0;
     for (NSArray *strokePoints in arr) {
         WTMGlyphStroke *stroke = [[WTMGlyphStroke alloc] init];
