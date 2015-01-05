@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.source   = { :git => 'https://github.com/Tif-tof/MultistrokeGestureRecognizer-iOS.git' }
 
-  s.source_files = 'WTMGlyph/*.{h,m,pch}'
-  s.prefix_header_contents = '#import "WTMGlyph-Prefix.pch"'
+  s.source_files = 'WTMGlyph/*.{h,m}'
+  s.prefix_header_contents = '#import "WTMGlyph-PrefixPods.h"'
   s.license = {:file => 'LICENSE'}
 end

@@ -43,6 +43,7 @@
 		EA6C9323136DA5CE008AD709 /* WTMGlyphDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMGlyphDetector.h; sourceTree = "<group>"; };
 		EA6C9324136DA5CE008AD709 /* WTMGlyphDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMGlyphDetector.m; sourceTree = "<group>"; };
 		F4B811D91A5A193F00E9994C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F4B811E11A5A222F00E9994C /* WTMGlyph-PrefixPods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WTMGlyph-PrefixPods.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +102,7 @@
 				EA583702138015020074BB72 /* WTMGlyphTemplate.m */,
 				EA4860EB1380411900E40C6C /* WTMGlyphUtilities.h */,
 				EA4860EC1380411900E40C6C /* WTMGlyphUtilities.m */,
+				F4B811E11A5A222F00E9994C /* WTMGlyph-PrefixPods.h */,
 				F4B811D91A5A193F00E9994C /* LICENSE */,
 			);
 			path = WTMGlyph;
